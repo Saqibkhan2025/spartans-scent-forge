@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* SPARTANS Design System - Premium Dark Luxury Fragrance Brand
+All colors MUST be HSL. Warrior-inspired masculine elegance.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Dark Premium Palette */
+    --background: 0 0% 7%;           /* Deep charcoal black */
+    --foreground: 30 8% 88%;         /* Warm silver */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 10%;               /* Slightly lighter charcoal */
+    --card-foreground: 30 8% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 30 8% 88%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 30 15% 15%;          /* Gunmetal dark */
+    --primary-foreground: 42 25% 75%; /* Bronze accent */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 12%;          /* Matte black */
+    --secondary-foreground: 42 25% 75%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 30 5% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 25% 75%;           /* Bronze/dark gold */
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 30 8% 88%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 42 25% 75%;
 
     --radius: 0.5rem;
+
+    /* Luxury Brand Extensions */
+    --bronze: 42 25% 75%;           /* Signature bronze */
+    --bronze-glow: 42 40% 65%;      /* Glowing bronze */
+    --gunmetal: 210 8% 25%;         /* Steel accent */
+    --obsidian: 0 0% 5%;           /* Pure black */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5%), hsl(210 8% 15%));
+    --gradient-bronze: linear-gradient(135deg, hsl(42 25% 75%), hsl(42 40% 65%));
+    --gradient-warrior: linear-gradient(180deg, hsl(0 0% 7%), hsl(0 0% 12%));
+    
+    /* Shadows & Effects */
+    --shadow-bronze: 0 10px 30px -10px hsl(42 25% 75% / 0.3);
+    --shadow-warrior: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
+    --glow-bronze: 0 0 40px hsl(42 40% 65% / 0.4);
+    
+    /* Animations */
+    --transition-luxury: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +122,77 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Luxury Button Variants */
+  .btn-warrior {
+    @apply bg-gradient-to-r from-[hsl(var(--bronze))] to-[hsl(var(--bronze-glow))] text-[hsl(var(--obsidian))] font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-[var(--shadow-bronze)] hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wider;
+  }
+  
+  .btn-ghost {
+    @apply border-2 border-[hsl(var(--bronze))] text-[hsl(var(--bronze))] bg-transparent font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:bg-[hsl(var(--bronze))] hover:text-[hsl(var(--obsidian))] hover:shadow-[var(--glow-bronze)] uppercase tracking-wider;
+  }
+  
+  /* Luxury Card Effects */
+  .card-warrior {
+    @apply bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-lg transition-all duration-300 hover:border-[hsl(var(--bronze))]/50 hover:shadow-[var(--shadow-warrior)];
+  }
+  
+  /* Text Gradients */
+  .text-bronze-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--bronze))] to-[hsl(var(--bronze-glow))] bg-clip-text text-transparent;
+  }
+  
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-glow {
+    animation: bronzeGlow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bronzeGlow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--bronze) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--bronze-glow) / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'cinzel': ['Cinzel', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// SPARTANS Brand Colors
+				bronze: 'hsl(var(--bronze))',
+				'bronze-glow': 'hsl(var(--bronze-glow))',
+				gunmetal: 'hsl(var(--gunmetal))',
+				obsidian: 'hsl(var(--obsidian))',
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-bronze': 'var(--gradient-bronze)',
+				'gradient-warrior': 'var(--gradient-warrior)',
+			},
+			boxShadow: {
+				'bronze': 'var(--shadow-bronze)',
+				'warrior': 'var(--shadow-warrior)',
+				'glow-bronze': 'var(--glow-bronze)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
