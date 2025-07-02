@@ -47,7 +47,7 @@ const Hero = () => {
             
             <div className="mt-8 flex items-center justify-center lg:justify-start gap-6">
               <div className="text-center">
-                <div className="text-bronze font-cinzel text-2xl font-bold">24H</div>
+                <div className="text-bronze font-cinzel text-2xl font-bold">6-8H</div>
                 <div className="text-muted-foreground text-sm font-inter">Lasting Power</div>
               </div>
               <div className="w-px h-12 bg-border"></div>
@@ -67,11 +67,19 @@ const Hero = () => {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative animate-float">
               <div className="absolute inset-0 bg-gradient-bronze rounded-full blur-3xl opacity-30 scale-150"></div>
-              <img 
-                src={heroImage} 
-                alt="SPARTANS Fragrance by Irfan" 
-                className="relative z-10 w-full max-w-lg h-auto object-contain animate-glow"
-              />
+              <div className="absolute -inset-20 bg-gradient-to-r from-bronze/10 via-bronze-glow/20 to-bronze/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="relative z-10 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-bronze/20 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+                <img 
+                  src={heroImage} 
+                  alt="SPARTANS Fragrance by Irfan" 
+                  className="relative z-10 w-full max-w-lg h-auto object-contain animate-glow drop-shadow-2xl filter brightness-110 contrast-110 group-hover:scale-105 transition-all duration-700"
+                  style={{
+                    filter: 'drop-shadow(0 25px 25px rgba(0,0,0,0.5)) drop-shadow(0 0 50px rgba(183, 141, 89, 0.3))'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl pointer-events-none"></div>
+              </div>
             </div>
           </div>
         </div>

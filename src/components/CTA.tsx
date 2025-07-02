@@ -34,22 +34,24 @@ const CTA = () => {
           </p>
           
           {/* Pricing */}
-          <div className="card-warrior p-8 mb-12 max-w-md mx-auto">
+          <div className="card-warrior p-8 mb-12 max-w-md mx-auto border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10">
             <div className="text-center">
-              <div className="text-muted-foreground line-through text-lg font-inter mb-2">$399</div>
-              <div className="text-5xl font-cinzel font-bold text-bronze mb-2">$299</div>
+              <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 3,500</div>
+              <div className="text-5xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
               <div className="text-muted-foreground font-inter">Launch Price - Limited Time</div>
               <div className="mt-4 text-sm text-destructive font-inter font-semibold">
-                Price increases to $399 after first 100 sales
+                Price increases to PKR 3,500 after first 100 sales
               </div>
             </div>
           </div>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <Button className="btn-warrior text-xl px-12 py-6 text-lg">
-              <Crown className="w-6 h-6 mr-3" />
-              Claim Your Bottle Now
+            <Button className="btn-warrior text-xl px-16 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <Crown className="w-8 h-8 mr-4 relative z-10" />
+              <span className="relative z-10 font-bold tracking-wider">CLAIM YOUR BOTTLE NOW</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             </Button>
             <Button variant="outline" className="btn-ghost text-xl px-12 py-6">
               <Shield className="w-6 h-6 mr-3" />

@@ -6,28 +6,28 @@ import review3 from "@/assets/review-3.jpg";
 const Reviews = () => {
   const reviews = [
     {
-      name: "Marcus Steel",
+      name: "Ahmed Malik",
       image: review1,
       rating: 5,
       title: "Commander of Presence",
-      review: "SPARTANS isn't just a fragrance—it's an aura. The moment I wear it, I feel the confidence of ancient warriors flowing through me. The oud and leather notes create an armor of sophistication that lasts all day.",
-      profession: "Executive Director"
+      review: "SPARTANS isn't just a fragrance—it's an aura. The moment I wear it, I feel the confidence of ancient warriors flowing through me. The oud and leather notes create an armor of sophistication that lasts 6-8 hours perfectly.",
+      profession: "CEO, Karachi"
     },
     {
-      name: "Viktor Reyes", 
+      name: "Hassan Raza", 
       image: review2,
       rating: 5,
       title: "Legendary Strength",
-      review: "Finally, a fragrance that matches my ambition. The depth of SPARTANS commands respect in every boardroom. The bronze packaging alone speaks to the quality within. This is what power smells like.",
-      profession: "Investment Banker"
+      review: "Finally, a fragrance that matches my ambition. The depth of SPARTANS commands respect in every meeting. The bronze packaging alone speaks to the quality within. This is what power smells like in Pakistan.",
+      profession: "Business Owner, Lahore"
     },
     {
-      name: "Dmitri Kozlov",
+      name: "Saad Khan",
       image: review3, 
       rating: 5,
       title: "Timeless Warrior",
-      review: "At my age, I've tried every fragrance worth owning. SPARTANS surpasses them all. The complexity evolves throughout the day—morning strength, afternoon power, evening mystery. Absolutely magnificent.",
-      profession: "Master Craftsman"
+      review: "Being in the fragrance business for years, I can say SPARTANS surpasses international brands. The complexity evolves beautifully—morning strength, afternoon power, evening mystery. Worth every rupee.",
+      profession: "Perfumer, Islamabad"
     }
   ];
 
