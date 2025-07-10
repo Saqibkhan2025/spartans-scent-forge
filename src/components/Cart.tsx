@@ -48,7 +48,10 @@ const Cart = () => {
             <ShoppingCart className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
             <h1 className="font-cinzel text-3xl font-bold text-foreground mb-4">Your Cart is Empty</h1>
             <p className="text-muted-foreground font-inter mb-8">Add the legendary SPARTANS fragrance to your cart</p>
-            <Button className="btn-warrior text-lg px-8 py-4">
+            <Button 
+              className="btn-warrior text-lg px-8 py-4"
+              onClick={() => window.location.href = '/'}
+            >
               Continue Shopping
             </Button>
           </div>
@@ -63,7 +66,11 @@ const Cart = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="flex items-center gap-4 mb-8">
-            <Button variant="ghost" className="p-2">
+            <Button 
+              variant="ghost" 
+              className="p-2"
+              onClick={() => window.location.href = '/'}
+            >
               <ArrowLeft className="w-6 h-6" />
             </Button>
             <h1 className="font-cinzel text-3xl font-bold text-foreground">Your Cart</h1>
@@ -186,10 +193,13 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <Button className="btn-warrior w-full text-lg py-6 mt-6 relative overflow-hidden group">
+                <Button 
+                  className="btn-warrior w-full text-lg py-6 mt-6 relative overflow-hidden group"
+                  onClick={() => window.location.href = '/checkout'}
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <Crown className="w-6 h-6 mr-3 relative z-10" />
-                  <span className="relative z-10 font-bold tracking-wider">PROCEED TO CHECKOUT</span>
+                  <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">PROCEED TO CHECKOUT</span>
                 </Button>
 
                 <div className="mt-6 text-center">

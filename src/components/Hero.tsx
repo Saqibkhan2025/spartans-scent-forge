@@ -37,9 +37,12 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="btn-warrior text-xl px-12 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none">
+              <Button 
+                className="btn-warrior text-xl px-12 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none"
+                onClick={() => window.location.href = '/checkout'}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="relative z-10 font-bold tracking-wider">OWN THE LEGEND</span>
+                <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">OWN THE LEGEND</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
               <Button variant="outline" className="btn-ghost text-lg px-8 py-6">

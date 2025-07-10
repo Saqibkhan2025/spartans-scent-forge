@@ -45,7 +45,11 @@ const Checkout = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="flex items-center gap-4 mb-8">
-            <Button variant="ghost" className="p-2">
+            <Button 
+              variant="ghost" 
+              className="p-2"
+              onClick={() => window.location.href = '/cart'}
+            >
               <ArrowLeft className="w-6 h-6" />
             </Button>
             <h1 className="font-cinzel text-3xl font-bold text-foreground">Secure Checkout</h1>
@@ -147,9 +151,10 @@ const Checkout = () => {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      placeholder="your@email.com"
+                      placeholder="irfanumer2022@gmail.com"
                       className="bg-background/50 border-bronze/20"
                     />
+                    <p className="text-xs text-muted-foreground mt-1">For any queries: irfanumer2022@gmail.com</p>
                   </div>
 
                   <div>
@@ -201,7 +206,7 @@ const Checkout = () => {
                         <span className="font-inter text-foreground">Cash on Delivery (COD)</span>
                       </div>
                       <p className="text-sm text-muted-foreground font-inter mt-2">
-                        Pay when your SPARTANS fragrance is delivered to your doorstep
+                        Pay when your SPARTANS fragrance is delivered to your doorstep. For any queries: irfanumer2022@gmail.com
                       </p>
                     </div>
                   </div>
@@ -212,7 +217,7 @@ const Checkout = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <Crown className="w-6 h-6 mr-3 relative z-10" />
-                    <span className="relative z-10 font-bold tracking-wider">CONFIRM ORDER - PKR {pricing[selectedSize].price.toLocaleString()}</span>
+                    <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">CONFIRM ORDER - PKR {pricing[selectedSize].price.toLocaleString()}</span>
                   </Button>
 
                   <p className="text-xs text-muted-foreground font-inter text-center mt-4">
