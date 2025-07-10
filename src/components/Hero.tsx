@@ -37,8 +37,10 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="btn-warrior text-lg px-8 py-6">
-                Own the Legend
+              <Button className="btn-warrior text-xl px-12 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10 font-bold tracking-wider">OWN THE LEGEND</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
               <Button variant="outline" className="btn-ghost text-lg px-8 py-6">
                 Discover Notes
@@ -73,9 +75,11 @@ const Hero = () => {
                 <img 
                   src={heroImage} 
                   alt="SPARTANS Fragrance by Irfan" 
-                  className="relative z-10 w-full max-w-lg h-auto object-contain animate-glow drop-shadow-2xl filter brightness-110 contrast-110 group-hover:scale-105 transition-all duration-700"
+                  className="relative z-10 w-full max-w-lg h-auto object-contain animate-glow group-hover:scale-105 transition-all duration-700"
                   style={{
-                    filter: 'drop-shadow(0 25px 25px rgba(0,0,0,0.5)) drop-shadow(0 0 50px rgba(183, 141, 89, 0.3))'
+                    filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.8)) drop-shadow(0 0 80px rgba(183, 141, 89, 0.6)) drop-shadow(0 0 120px rgba(183, 141, 89, 0.3))',
+                    background: 'transparent',
+                    mixBlendMode: 'normal'
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl pointer-events-none"></div>

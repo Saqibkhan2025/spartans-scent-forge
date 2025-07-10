@@ -33,30 +33,55 @@ const CTA = () => {
             you were born to be.
           </p>
           
-          {/* Pricing */}
-          <div className="card-warrior p-8 mb-12 max-w-md mx-auto border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10">
-            <div className="text-center">
-              <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 3,500</div>
-              <div className="text-5xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
-              <div className="text-muted-foreground font-inter">Launch Price - Limited Time</div>
-              <div className="mt-4 text-sm text-destructive font-inter font-semibold">
-                Price increases to PKR 3,500 after first 100 sales
+          {/* Size Selection & Pricing */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+            {/* 50ml Option */}
+            <div className="card-warrior p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+              <div className="absolute top-4 right-4 bg-bronze/20 text-bronze text-xs px-3 py-1 rounded-full font-inter font-semibold">POPULAR</div>
+              <div className="text-center">
+                <div className="text-2xl font-cinzel font-bold text-foreground mb-2">50ml</div>
+                <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 3,500</div>
+                <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
+                <div className="text-muted-foreground font-inter mb-4">Perfect for daily use</div>
+                <Button className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300">
+                  Select 50ml
+                </Button>
+              </div>
+            </div>
+            
+            {/* 100ml Option */}
+            <div className="card-warrior p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+              <div className="absolute top-4 right-4 bg-destructive/20 text-destructive text-xs px-3 py-1 rounded-full font-inter font-semibold">BEST VALUE</div>
+              <div className="text-center">
+                <div className="text-2xl font-cinzel font-bold text-foreground mb-2">100ml</div>
+                <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 6,000</div>
+                <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 4,000</div>
+                <div className="text-muted-foreground font-inter mb-4">Ultimate luxury experience</div>
+                <Button className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300">
+                  Select 100ml
+                </Button>
               </div>
             </div>
           </div>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <Button className="btn-warrior text-xl px-16 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none">
+          {/* Main CTA Buttons */}
+          <div className="flex flex-col gap-6 justify-center mb-12 max-w-2xl mx-auto">
+            <Button className="btn-warrior text-2xl px-20 py-10 relative overflow-hidden group animate-pulse hover:animate-none shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Crown className="w-8 h-8 mr-4 relative z-10" />
-              <span className="relative z-10 font-bold tracking-wider">CLAIM YOUR BOTTLE NOW</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              <Crown className="w-10 h-10 mr-4 relative z-10" />
+              <span className="relative z-10 font-bold tracking-widest">CLAIM YOUR BOTTLE NOW</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             </Button>
-            <Button variant="outline" className="btn-ghost text-xl px-12 py-6">
-              <Shield className="w-6 h-6 mr-3" />
-              Reserve for Later
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="outline" className="btn-ghost text-lg px-8 py-4 flex-1">
+                <Shield className="w-5 h-5 mr-3" />
+                Add to Cart
+              </Button>
+              <Button variant="secondary" className="text-lg px-8 py-4 flex-1">
+                Reserve for Later
+              </Button>
+            </div>
           </div>
           
           {/* Trust Indicators */}
