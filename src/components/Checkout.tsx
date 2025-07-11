@@ -83,12 +83,8 @@ const Checkout = () => {
                 {/* Pricing */}
                 <div className="space-y-4 border-t border-bronze/20 pt-6">
                   <div className="flex justify-between">
-                    <span className="font-inter text-muted-foreground">Subtotal ({selectedSize})</span>
-                    <span className="font-inter line-through text-muted-foreground">PKR {pricing[selectedSize].original.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-inter text-foreground">Launch Discount</span>
-                    <span className="font-inter text-destructive">-PKR {(pricing[selectedSize].original - pricing[selectedSize].price).toLocaleString()}</span>
+                    <span className="font-inter text-foreground">Subtotal ({selectedSize})</span>
+                    <span className="font-inter text-foreground">PKR {pricing[selectedSize].price.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="font-inter text-foreground">Shipping</span>
@@ -183,6 +179,36 @@ const Checkout = () => {
                           <SelectItem value="peshawar">Peshawar</SelectItem>
                           <SelectItem value="quetta">Quetta</SelectItem>
                           <SelectItem value="multan">Multan</SelectItem>
+                          <SelectItem value="sialkot">Sialkot</SelectItem>
+                          <SelectItem value="gujranwala">Gujranwala</SelectItem>
+                          <SelectItem value="hyderabad">Hyderabad</SelectItem>
+                          <SelectItem value="bahawalpur">Bahawalpur</SelectItem>
+                          <SelectItem value="sargodha">Sargodha</SelectItem>
+                          <SelectItem value="sukkur">Sukkur</SelectItem>
+                          <SelectItem value="larkana">Larkana</SelectItem>
+                          <SelectItem value="sheikhupura">Sheikhupura</SelectItem>
+                          <SelectItem value="rahim-yar-khan">Rahim Yar Khan</SelectItem>
+                          <SelectItem value="jhang">Jhang</SelectItem>
+                          <SelectItem value="dera-ghazi-khan">Dera Ghazi Khan</SelectItem>
+                          <SelectItem value="gujrat">Gujrat</SelectItem>
+                          <SelectItem value="sahiwal">Sahiwal</SelectItem>
+                          <SelectItem value="wah-cantonment">Wah Cantonment</SelectItem>
+                          <SelectItem value="mardan">Mardan</SelectItem>
+                          <SelectItem value="kasur">Kasur</SelectItem>
+                          <SelectItem value="okara">Okara</SelectItem>
+                          <SelectItem value="mingora">Mingora</SelectItem>
+                          <SelectItem value="nawabshah">Nawabshah</SelectItem>
+                          <SelectItem value="chiniot">Chiniot</SelectItem>
+                          <SelectItem value="kotri">Kotri</SelectItem>
+                          <SelectItem value="khanpur">Khanpur</SelectItem>
+                          <SelectItem value="hafizabad">Hafizabad</SelectItem>
+                          <SelectItem value="sadiqabad">Sadiqabad</SelectItem>
+                          <SelectItem value="mirpur-khas">Mirpur Khas</SelectItem>
+                          <SelectItem value="turbat">Turbat</SelectItem>
+                          <SelectItem value="abbottabad">Abbottabad</SelectItem>
+                          <SelectItem value="muzaffarabad">Muzaffarabad</SelectItem>
+                          <SelectItem value="gilgit">Gilgit</SelectItem>
+                          <SelectItem value="skardu">Skardu</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

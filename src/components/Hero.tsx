@@ -45,7 +45,16 @@ const Hero = () => {
                 <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">OWN THE LEGEND</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
-              <Button variant="outline" className="btn-ghost text-lg px-8 py-6">
+              <Button 
+                variant="outline" 
+                className="btn-ghost text-lg px-8 py-6"
+                onClick={() => {
+                  const aboutSection = document.getElementById('about');
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Discover Notes
               </Button>
             </div>

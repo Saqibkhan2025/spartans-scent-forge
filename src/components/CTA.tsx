@@ -43,8 +43,13 @@ const CTA = () => {
                 <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 3,500</div>
                 <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
                 <div className="text-muted-foreground font-inter mb-4">Perfect for daily use</div>
-                <Button className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300">
-                  Select 50ml
+                <Button 
+                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+                  onClick={() => window.location.href = '/cart'}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">Select 50ml</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </Button>
               </div>
             </div>
@@ -57,8 +62,13 @@ const CTA = () => {
                 <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 6,000</div>
                 <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 4,000</div>
                 <div className="text-muted-foreground font-inter mb-4">Ultimate luxury experience</div>
-                <Button className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300">
-                  Select 100ml
+                <Button 
+                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+                  onClick={() => window.location.href = '/cart'}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">Select 100ml</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </Button>
               </div>
             </div>
@@ -88,7 +98,10 @@ const CTA = () => {
               <Button 
                 variant="secondary" 
                 className="text-lg px-8 py-4 flex-1"
-                onClick={() => window.location.href = '/cart'}
+                onClick={() => {
+                  window.location.href = '/cart';
+                  // Could add toast notification here for reservation confirmation
+                }}
               >
                 Reserve for Later
               </Button>
