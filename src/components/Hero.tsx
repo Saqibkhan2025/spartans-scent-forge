@@ -38,7 +38,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                className="btn-warrior text-xl px-12 py-8 text-2xl relative overflow-hidden group animate-pulse hover:animate-none"
+                className="btn-warrior text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 text-xl sm:text-2xl relative overflow-hidden group animate-pulse hover:animate-none"
                 onClick={() => window.location.href = '/checkout'}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -47,7 +47,7 @@ const Hero = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="btn-ghost text-lg px-8 py-6"
+                className="btn-ghost text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 onClick={() => {
                   const aboutSection = document.getElementById('about');
                   if (aboutSection) {
@@ -59,20 +59,20 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-6">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
               <div className="text-center">
-                <div className="text-bronze font-cinzel text-2xl font-bold">6-8H</div>
-                <div className="text-muted-foreground text-sm font-inter">Lasting Power</div>
+                <div className="text-bronze font-cinzel text-xl sm:text-2xl font-bold">6-8H</div>
+                <div className="text-muted-foreground text-xs sm:text-sm font-inter">Lasting Power</div>
               </div>
-              <div className="w-px h-12 bg-border"></div>
+              <div className="w-px h-8 sm:h-12 bg-border"></div>
               <div className="text-center">
-                <div className="text-bronze font-cinzel text-2xl font-bold">99</div>
-                <div className="text-muted-foreground text-sm font-inter">Left in Stock</div>
+                <div className="text-bronze font-cinzel text-xl sm:text-2xl font-bold">99</div>
+                <div className="text-muted-foreground text-xs sm:text-sm font-inter">Left in Stock</div>
               </div>
-              <div className="w-px h-12 bg-border"></div>
+              <div className="w-px h-8 sm:h-12 bg-border"></div>
               <div className="text-center">
-                <div className="text-bronze font-cinzel text-2xl font-bold">4.9</div>
-                <div className="text-muted-foreground text-sm font-inter">Elite Rating</div>
+                <div className="text-bronze font-cinzel text-xl sm:text-2xl font-bold">4.9</div>
+                <div className="text-muted-foreground text-xs sm:text-sm font-inter">Elite Rating</div>
               </div>
             </div>
           </div>

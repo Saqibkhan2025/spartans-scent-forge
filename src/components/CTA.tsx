@@ -34,17 +34,17 @@ const CTA = () => {
           </p>
           
           {/* Size Selection & Pricing */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto">
             {/* 50ml Option */}
-            <div className="card-warrior p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
-              <div className="absolute top-4 right-4 bg-bronze/20 text-bronze text-xs px-3 py-1 rounded-full font-inter font-semibold">POPULAR</div>
+            <div className="card-warrior p-6 sm:p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-bronze/20 text-bronze text-xs px-2 sm:px-3 py-1 rounded-full font-inter font-semibold">POPULAR</div>
               <div className="text-center">
-                <div className="text-2xl font-cinzel font-bold text-foreground mb-2">50ml</div>
-                <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 3,500</div>
-                <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
-                <div className="text-muted-foreground font-inter mb-4">Perfect for daily use</div>
+                <div className="text-xl sm:text-2xl font-cinzel font-bold text-foreground mb-2">50ml</div>
+                <div className="text-muted-foreground line-through text-base sm:text-lg font-inter mb-2">PKR 3,500</div>
+                <div className="text-3xl sm:text-4xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
+                <div className="text-muted-foreground font-inter mb-4 text-sm sm:text-base">Perfect for daily use</div>
                 <Button 
-                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden text-sm sm:text-base py-3 sm:py-4"
                   onClick={() => window.location.href = '/cart'}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -55,15 +55,15 @@ const CTA = () => {
             </div>
             
             {/* 100ml Option */}
-            <div className="card-warrior p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
-              <div className="absolute top-4 right-4 bg-destructive/20 text-destructive text-xs px-3 py-1 rounded-full font-inter font-semibold">BEST VALUE</div>
+            <div className="card-warrior p-6 sm:p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-destructive/20 text-destructive text-xs px-2 sm:px-3 py-1 rounded-full font-inter font-semibold">BEST VALUE</div>
               <div className="text-center">
-                <div className="text-2xl font-cinzel font-bold text-foreground mb-2">100ml</div>
-                <div className="text-muted-foreground line-through text-lg font-inter mb-2">PKR 6,000</div>
-                <div className="text-4xl font-cinzel font-bold text-bronze mb-2">PKR 4,000</div>
-                <div className="text-muted-foreground font-inter mb-4">Ultimate luxury experience</div>
+                <div className="text-xl sm:text-2xl font-cinzel font-bold text-foreground mb-2">100ml</div>
+                <div className="text-muted-foreground line-through text-base sm:text-lg font-inter mb-2">PKR 6,000</div>
+                <div className="text-3xl sm:text-4xl font-cinzel font-bold text-bronze mb-2">PKR 4,000</div>
+                <div className="text-muted-foreground font-inter mb-4 text-sm sm:text-base">Ultimate luxury experience</div>
                 <Button 
-                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+                  className="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden text-sm sm:text-base py-3 sm:py-4"
                   onClick={() => window.location.href = '/cart'}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -75,29 +75,29 @@ const CTA = () => {
           </div>
           
           {/* Main CTA Buttons */}
-          <div className="flex flex-col gap-6 justify-center mb-12 max-w-2xl mx-auto">
+          <div className="flex flex-col gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             <Button 
-              className="btn-warrior text-2xl px-20 py-10 relative overflow-hidden group animate-pulse hover:animate-none shadow-2xl"
+              className="btn-warrior text-lg sm:text-2xl px-12 sm:px-20 py-6 sm:py-10 relative overflow-hidden group animate-pulse hover:animate-none shadow-2xl"
               onClick={() => window.location.href = '/checkout'}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <Crown className="w-10 h-10 mr-4 relative z-10" />
+              <Crown className="w-6 sm:w-10 h-6 sm:h-10 mr-2 sm:mr-4 relative z-10" />
               <span className="relative z-10 font-bold tracking-widest text-white drop-shadow-lg">CLAIM YOUR BOTTLE NOW</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             </Button>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button 
                 variant="outline" 
-                className="btn-ghost text-lg px-8 py-4 flex-1"
+                className="btn-ghost text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex-1"
                 onClick={() => window.location.href = '/cart'}
               >
-                <Shield className="w-5 h-5 mr-3" />
+                <Shield className="w-4 sm:w-5 h-4 sm:h-5 mr-2 sm:mr-3" />
                 Add to Cart
               </Button>
               <Button 
                 variant="secondary" 
-                className="text-lg px-8 py-4 flex-1"
+                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex-1"
                 onClick={() => {
                   window.location.href = '/cart';
                   // Could add toast notification here for reservation confirmation

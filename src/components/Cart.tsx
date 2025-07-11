@@ -76,14 +76,14 @@ const Cart = () => {
             <h1 className="font-cinzel text-3xl font-bold text-foreground">Your Cart</h1>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Cart Items */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
               {cartItems.map((item) => (
-                <Card key={item.id} className="card-warrior p-6 border-2 border-bronze/30">
-                  <div className="flex items-center gap-6">
+                <Card key={item.id} className="card-warrior p-4 sm:p-6 border-2 border-bronze/30">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                     {/* Product Image */}
-                    <div className="relative w-24 h-24 flex-shrink-0">
+                    <div className="relative w-20 sm:w-24 h-20 sm:h-24 flex-shrink-0 mx-auto sm:mx-0">
                       <img 
                         src={heroImage} 
                         alt="SPARTANS Fragrance"
@@ -95,12 +95,12 @@ const Cart = () => {
                     </div>
 
                     {/* Product Details */}
-                    <div className="flex-1">
-                      <h3 className="font-cinzel text-xl font-bold text-foreground">SPARTANS Fragrance</h3>
+                    <div className="flex-1 text-center sm:text-left">
+                      <h3 className="font-cinzel text-lg sm:text-xl font-bold text-foreground">SPARTANS Fragrance</h3>
                       <p className="text-muted-foreground font-inter text-sm">By Fragrance by Irfan</p>
                       <p className="text-bronze font-inter font-semibold mt-1">Size: {item.size}</p>
                       
-                      <div className="flex items-center gap-4 mt-4">
+                      <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4 mt-4">
                         <div className="flex items-center gap-2 bg-background/50 rounded-lg p-2">
                           <Button 
                             size="sm" 
@@ -123,7 +123,7 @@ const Cart = () => {
                         <Button 
                           size="sm" 
                           variant="ghost" 
-                          className="text-destructive hover:text-destructive"
+                          className="text-destructive hover:text-destructive text-sm"
                           onClick={() => removeItem(item.id)}
                         >
                           <Trash2 className="w-4 h-4 mr-2" />
@@ -133,11 +133,11 @@ const Cart = () => {
                     </div>
 
                     {/* Price */}
-                    <div className="text-right">
+                    <div className="text-center sm:text-right mt-4 sm:mt-0">
                       <div className="text-sm text-muted-foreground font-inter line-through">
                         PKR {(item.original * item.quantity).toLocaleString()}
                       </div>
-                      <div className="text-2xl font-cinzel font-bold text-bronze">
+                      <div className="text-xl sm:text-2xl font-cinzel font-bold text-bronze">
                         PKR {(item.price * item.quantity).toLocaleString()}
                       </div>
                     </div>
@@ -146,19 +146,19 @@ const Cart = () => {
               ))}
 
               {/* Add More Sizes */}
-              <Card className="card-warrior p-6 border-2 border-bronze/30 bg-bronze/5">
-                <h3 className="font-cinzel text-lg font-bold text-foreground mb-4">Add More Sizes</h3>
-                <div className="grid grid-cols-2 gap-4">
+              <Card className="card-warrior p-4 sm:p-6 border-2 border-bronze/30 bg-bronze/5">
+                <h3 className="font-cinzel text-base sm:text-lg font-bold text-foreground mb-4">Add More Sizes</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <Button 
                     variant="outline" 
-                    className="btn-ghost"
+                    className="btn-ghost text-sm sm:text-base py-3"
                     onClick={() => addSize("50ml")}
                   >
                     Add 50ml - PKR 2,500
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="btn-ghost"
+                    className="btn-ghost text-sm sm:text-base py-3"
                     onClick={() => addSize("100ml")}
                   >
                     Add 100ml - PKR 4,000

@@ -137,11 +137,11 @@ All colors MUST be HSL. Warrior-inspired masculine elegance.
 @layer components {
   /* Luxury Button Variants */
   .btn-warrior {
-    @apply bg-gradient-to-r from-[hsl(var(--bronze))] to-[hsl(var(--bronze-glow))] text-[hsl(var(--obsidian))] font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-[var(--shadow-bronze)] hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wider;
+    @apply bg-gradient-to-r from-[hsl(var(--bronze))] to-[hsl(var(--bronze-glow))] text-[hsl(var(--obsidian))] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 hover:shadow-[var(--shadow-bronze)] hover:scale-[1.02] active:scale-[0.98] uppercase tracking-wider text-sm sm:text-base;
   }
   
   .btn-ghost {
-    @apply border-2 border-[hsl(var(--bronze))] text-[hsl(var(--bronze))] bg-transparent font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:bg-[hsl(var(--bronze))] hover:text-[hsl(var(--obsidian))] hover:shadow-[var(--glow-bronze)] uppercase tracking-wider;
+    @apply border-2 border-[hsl(var(--bronze))] text-[hsl(var(--bronze))] bg-transparent font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 hover:bg-[hsl(var(--bronze))] hover:text-[hsl(var(--obsidian))] hover:shadow-[var(--glow-bronze)] uppercase tracking-wider text-sm sm:text-base;
   }
   
   /* Luxury Card Effects */

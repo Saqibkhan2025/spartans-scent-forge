@@ -55,10 +55,10 @@ const Checkout = () => {
             <h1 className="font-cinzel text-3xl font-bold text-foreground">Secure Checkout</h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Order Summary */}
             <div className="order-2 lg:order-1">
-              <Card className="card-warrior p-8 border-2 border-bronze/30">
+              <Card className="card-warrior p-6 sm:p-8 border-2 border-bronze/30">
                 <h2 className="font-cinzel text-2xl font-bold text-foreground mb-6">Order Summary</h2>
                 
                 {/* Product Selection */}
@@ -120,7 +120,7 @@ const Checkout = () => {
                 <h2 className="font-cinzel text-2xl font-bold text-foreground mb-6">Delivery Information</h2>
                 
                 <form className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-inter text-foreground mb-2">Full Name *</label>
                       <Input 
@@ -163,7 +163,7 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-inter text-foreground mb-2">City</label>
                       <Select value={formData.city} onValueChange={(value) => setFormData({...formData, city: value})}>
@@ -239,10 +239,10 @@ const Checkout = () => {
 
                   <Button 
                     onClick={handleCheckout}
-                    className="btn-warrior w-full text-xl py-6 mt-8 relative overflow-hidden group"
+                    className="btn-warrior w-full text-lg sm:text-xl py-5 sm:py-6 mt-8 relative overflow-hidden group"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <Crown className="w-6 h-6 mr-3 relative z-10" />
+                    <Crown className="w-5 sm:w-6 h-5 sm:h-6 mr-2 sm:mr-3 relative z-10" />
                     <span className="relative z-10 font-bold tracking-wider text-white drop-shadow-lg">CONFIRM ORDER - PKR {pricing[selectedSize].price.toLocaleString()}</span>
                   </Button>
 
