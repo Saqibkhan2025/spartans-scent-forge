@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARTANS - Legendary Fragrance for Modern Warriors</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* SPARTANS Design System - Premium Dark Luxury Fragrance Brand */
+        :root {
+            /* Core Brand Colors - Dark Premium Palette */
+            --background: 0 0% 7%;           /* Deep charcoal black */
+            --foreground: 30 8% 88%;         /* Warm silver */
+            --card: 0 0% 10%;               /* Slightly lighter charcoal */
+            --card-foreground: 30 8% 88%;
+            --popover: 0 0% 8%;
+            --popover-foreground: 30 8% 88%;
+            --primary: 30 15% 15%;          /* Gunmetal dark */
+            --primary-foreground: 42 25% 75%; /* Bronze accent */
+            --secondary: 0 0% 12%;          /* Matte black */
+            --secondary-foreground: 42 25% 75%;
+            --muted: 0 0% 14%;
+            --muted-foreground: 30 5% 60%;
+            --accent: 42 25% 75%;           /* Bronze/dark gold */
+            --accent-foreground: 0 0% 7%;
+            --destructive: 0 65% 45%;
+            --destructive-foreground: 30 8% 88%;
+            --border: 0 0% 18%;
+            --input: 0 0% 15%;
+            --ring: 42 25% 75%;
+            --radius: 0.5rem;
+            
+            /* Luxury Brand Extensions */
+            --bronze: 42 25% 75%;           /* Signature bronze */
+            --bronze-glow: 42 40% 65%;      /* Glowing bronze */
+            --gunmetal: 210 8% 25%;         /* Steel accent */
+            --obsidian: 0 0% 5%;           /* Pure black */
+            
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, hsl(0 0% 5%), hsl(210 8% 15%));
+            --gradient-bronze: linear-gradient(135deg, hsl(42 25% 75%), hsl(42 40% 65%));
+            --gradient-warrior: linear-gradient(180deg, hsl(0 0% 7%), hsl(0 0% 12%));
+            
+            /* Shadows & Effects */
+            --shadow-bronze: 0 10px 30px -10px hsl(42 25% 75% / 0.3);
+            --shadow-warrior: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
+            --glow-bronze: 0 0 40px hsl(42 40% 65% / 0.4);
+            
+            /* Animations */
+            --transition-luxury: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Luxury Button Variants */
+        .btn-warrior {
+            background: linear-gradient(135deg, hsl(var(--bronze)), hsl(var(--bronze-glow)));
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-warrior:hover {
+            box-shadow: var(--shadow-bronze);
+            transform: scale(1.02);
+        }
+        
+        .btn-ghost {
+            border: 2px solid hsl(var(--bronze));
+            color: hsl(var(--bronze));
+            background: transparent;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+        
+        .btn-ghost:hover {
+            background: hsl(var(--bronze));
+            color: hsl(var(--obsidian));
+            box-shadow: var(--glow-bronze);
+        }
+        
+        /* Card Effects */
+        .card-warrior {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card-warrior:hover {
+            border-color: hsl(var(--bronze) / 0.5);
+            box-shadow: var(--shadow-warrior);
+        }
+        
+        /* Text Gradients */
+        .text-bronze-gradient {
+            background: linear-gradient(135deg, hsl(var(--bronze)), hsl(var(--bronze-glow)));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bronzeGlow {
+            from {
+                box-shadow: 0 0 20px hsl(var(--bronze) / 0.3);
+            }
+            to {
+                box-shadow: 0 0 30px hsl(var(--bronze-glow) / 0.6);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+        
+        .animate-glow {
+            animation: bronzeGlow 2s ease-in-out infinite alternate;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsive utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+        
+        /* Gradient backgrounds */
+        .bg-gradient-hero {
+            background: var(--gradient-hero);
+        }
+        
+        .bg-gradient-warrior {
+            background: var(--gradient-warrior);
+        }
+        
+        /* Touch targets for mobile */
+        @media (max-width: 768px) {
+            .btn-warrior, .btn-ghost {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+        }
+    </style>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        card: 'hsl(var(--card))',
+                        'card-foreground': 'hsl(var(--card-foreground))',
+                        popover: 'hsl(var(--popover))',
+                        'popover-foreground': 'hsl(var(--popover-foreground))',
+                        primary: 'hsl(var(--primary))',
+                        'primary-foreground': 'hsl(var(--primary-foreground))',
+                        secondary: 'hsl(var(--secondary))',
+                        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+                        muted: 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        accent: 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        destructive: 'hsl(var(--destructive))',
+                        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        bronze: 'hsl(var(--bronze))',
+                        'bronze-glow': 'hsl(var(--bronze-glow))',
+                        gunmetal: 'hsl(var(--gunmetal))',
+                        obsidian: 'hsl(var(--obsidian))'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-background">
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-hero relative overflow-hidden flex items-center">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-bronze/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 bg-bronze-glow/15 rounded-full blur-2xl animate-float" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJncmlkLXBhdHRlcm4iIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMiIgZmlsbD0iIzkyNzI0MSIgb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZC1wYXR0ZXJuKSIvPgo8L3N2Zz4=')"></div>
+        </div>
+        
+        <div class="container relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen py-12 lg:py-20">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-3 bg-bronze/20 border border-bronze/30 rounded-full px-4 py-2 mb-6 lg:mb-8">
+                        <div class="w-2 h-2 bg-bronze rounded-full animate-pulse"></div>
+                        <span class="text-bronze font-inter text-sm font-semibold tracking-wider uppercase">Limited Edition</span>
+                    </div>
+                    
+                    <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 lg:mb-8 animate-fade-up">
+                        <span class="text-bronze-gradient">SPARTANS</span><br>
+                        <span class="text-foreground">Legendary Fragrance</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-8 lg:mb-12 font-inter leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Command respect. Conquer with confidence. Unleash the warrior within with our signature blend of power and sophistication.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8 lg:mb-12">
+                        <button class="btn-warrior text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 relative overflow-hidden group" onclick="scrollToSection('cta')">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            <span class="relative z-10">Own the Legend</span>
+                        </button>
+                        <button class="btn-ghost text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6" onclick="scrollToSection('about')">
+                            Discover Notes
+                        </button>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-center">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-cinzel font-bold text-bronze mb-2">300+</div>
+                            <div class="text-sm text-muted-foreground font-inter">Legendary Warriors</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-cinzel font-bold text-bronze mb-2">30</div>
+                            <div class="text-sm text-muted-foreground font-inter">Day Guarantee</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-cinzel font-bold text-bronze mb-2">★★★★★</div>
+                            <div class="text-sm text-muted-foreground font-inter">Warrior Reviews</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="order-1 lg:order-2 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-lg">
+                        <div class="aspect-square bg-gradient-to-br from-bronze/20 to-bronze-glow/30 rounded-full absolute inset-0 blur-3xl animate-glow"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=600&fit=crop&crop=center" 
+                            alt="SPARTANS Fragrance Bottle" 
+                            class="relative z-10 w-full h-auto rounded-2xl shadow-2xl animate-float object-cover"
+                        />
+                        <div class="absolute -top-4 -right-4 bg-bronze text-obsidian px-4 py-2 rounded-full font-cinzel font-bold text-sm animate-pulse">
+                            Limited
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 lg:py-24 bg-gradient-warrior relative">
+        <div class="container">
+            <div class="text-center mb-12 lg:mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    <span class="text-bronze-gradient">The Spartan Legacy</span>
+                </h2>
+                <p class="text-lg sm:text-xl text-muted-foreground font-inter max-w-3xl mx-auto leading-relaxed">
+                    Forged in the spirit of ancient warriors, SPARTANS embodies strength, honor, and uncompromising excellence. Every drop tells the story of legendary courage.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <!-- Fragrance Notes -->
+                <div class="space-y-6 lg:space-y-8">
+                    <div class="card-warrior p-6 lg:p-8">
+                        <h3 class="font-cinzel text-xl lg:text-2xl font-bold text-bronze mb-4">Fragrance Profile</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-inter font-semibold text-foreground mb-2">Top Notes</h4>
+                                <p class="text-muted-foreground text-sm lg:text-base">Bergamot, Black Pepper, Cardamom</p>
+                            </div>
+                            <div>
+                                <h4 class="font-inter font-semibold text-foreground mb-2">Heart Notes</h4>
+                                <p class="text-muted-foreground text-sm lg:text-base">Cedarwood, Patchouli, Leather</p>
+                            </div>
+                            <div>
+                                <h4 class="font-inter font-semibold text-foreground mb-2">Base Notes</h4>
+                                <p class="text-muted-foreground text-sm lg:text-base">Amber, Sandalwood, Musk</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-warrior p-6 lg:p-8">
+                        <h3 class="font-cinzel text-xl lg:text-2xl font-bold text-bronze mb-4">The Experience</h3>
+                        <p class="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                            SPARTANS opens with an invigorating burst of bergamot and black pepper, commanding immediate attention. 
+                            The heart reveals a sophisticated blend of cedarwood and leather, while the base settles into a warm, 
+                            masculine foundation of amber and sandalwood that lingers with legendary presence.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="relative">
+                    <img 
+                        src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=800&fit=crop&crop=center" 
+                        alt="Spartan Warrior Inspiration" 
+                        class="w-full h-auto rounded-2xl shadow-2xl"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-16 lg:py-24 bg-background">
+        <div class="container">
+            <div class="text-center mb-12 lg:mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    <span class="text-bronze-gradient">Warrior Testimonials</span>
+                </h2>
+                <p class="text-lg sm:text-xl text-muted-foreground font-inter max-w-2xl mx-auto">
+                    Join the brotherhood of modern legends who've claimed their power
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Review 1 -->
+                <div class="card-warrior p-6 lg:p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-bronze text-xl">★★★★★</div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic text-sm lg:text-base">
+                        "SPARTANS transformed my presence. Every room I enter, people notice. This isn't just a fragrance—it's confidence in a bottle."
+                    </p>
+                    <div class="font-inter font-semibold text-foreground">Marcus R.</div>
+                    <div class="text-muted-foreground text-sm">CEO, Tech Startup</div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="card-warrior p-6 lg:p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-bronze text-xl">★★★★★</div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic text-sm lg:text-base">
+                        "The longevity is incredible. One spray in the morning, and I'm still getting compliments at dinner. Truly legendary."
+                    </p>
+                    <div class="font-inter font-semibold text-foreground">David K.</div>
+                    <div class="text-muted-foreground text-sm">Investment Banker</div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="card-warrior p-6 lg:p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-bronze text-xl">★★★★★</div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic text-sm lg:text-base">
+                        "Finally found my signature scent. SPARTANS embodies everything I aspire to be—strong, sophisticated, unforgettable."
+                    </p>
+                    <div class="font-inter font-semibold text-foreground">Alexander M.</div>
+                    <div class="text-muted-foreground text-sm">Entrepreneur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-16 lg:py-24 bg-gradient-hero relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-bronze/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-bronze/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Urgency Alert -->
+                <div class="inline-flex items-center gap-3 bg-destructive/20 border border-destructive/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 lg:mb-8">
+                    <div class="w-2 h-2 bg-destructive rounded-full animate-pulse"></div>
+                    <span class="text-destructive font-inter font-semibold text-sm sm:text-base">FINAL HOURS - Only 47 bottles remaining</span>
+                </div>
+                
+                <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6">
+                    <span class="text-bronze-gradient">Own the Legend</span>
+                </h2>
+                
+                <p class="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6 lg:mb-8 font-inter">
+                    Join the brotherhood of modern warriors
+                </p>
+                
+                <p class="text-base sm:text-lg lg:text-xl text-foreground mb-8 lg:mb-12 max-w-2xl mx-auto font-inter leading-relaxed">
+                    This is your moment. Your chance to command the room before you even speak. 
+                    To carry the essence of ancient strength in a modern world. To become the legend 
+                    you were born to be.
+                </p>
+                
+                <!-- Size Selection & Pricing -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mb-8 lg:mb-12 max-w-4xl mx-auto">
+                    <!-- 50ml Option -->
+                    <div class="card-warrior p-6 lg:p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+                        <div class="absolute top-3 lg:top-4 right-3 lg:right-4 bg-bronze/20 text-bronze text-xs px-2 lg:px-3 py-1 rounded-full font-inter font-semibold">POPULAR</div>
+                        <div class="text-center">
+                            <div class="text-xl lg:text-2xl font-cinzel font-bold text-foreground mb-2">50ml</div>
+                            <div class="text-muted-foreground line-through text-base lg:text-lg font-inter mb-2">PKR 3,500</div>
+                            <div class="text-2xl lg:text-3xl xl:text-4xl font-cinzel font-bold text-bronze mb-2">PKR 2,500</div>
+                            <div class="text-muted-foreground font-inter mb-4 text-sm lg:text-base">Perfect for daily use</div>
+                            <button class="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden py-3 lg:py-4" onclick="window.open('https://wa.me/923001234567?text=I want to order SPARTANS 50ml for PKR 2,500', '_blank')">
+                                <div class="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <span class="relative z-10 font-bold tracking-wider text-white drop-shadow-lg text-sm lg:text-base">Select 50ml</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 100ml Option -->
+                    <div class="card-warrior p-6 lg:p-8 border-2 border-bronze/30 bg-gradient-to-br from-bronze/5 to-bronze-glow/10 relative group hover:border-bronze/50 transition-all duration-300">
+                        <div class="absolute top-3 lg:top-4 right-3 lg:right-4 bg-destructive/20 text-destructive text-xs px-2 lg:px-3 py-1 rounded-full font-inter font-semibold">BEST VALUE</div>
+                        <div class="text-center">
+                            <div class="text-xl lg:text-2xl font-cinzel font-bold text-foreground mb-2">100ml</div>
+                            <div class="text-muted-foreground line-through text-base lg:text-lg font-inter mb-2">PKR 6,000</div>
+                            <div class="text-2xl lg:text-3xl xl:text-4xl font-cinzel font-bold text-bronze mb-2">PKR 4,000</div>
+                            <div class="text-muted-foreground font-inter mb-4 text-sm lg:text-base">Ultimate luxury experience</div>
+                            <button class="btn-warrior w-full group-hover:scale-105 transition-transform duration-300 relative overflow-hidden py-3 lg:py-4" onclick="window.open('https://wa.me/923001234567?text=I want to order SPARTANS 100ml for PKR 4,000', '_blank')">
+                                <div class="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <span class="relative z-10 font-bold tracking-wider text-white drop-shadow-lg text-sm lg:text-base">Select 100ml</span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main CTA Button -->
+                <div class="mb-8 lg:mb-12">
+                    <button class="btn-warrior text-lg sm:text-xl lg:text-2xl px-8 sm:px-12 lg:px-20 py-4 sm:py-6 lg:py-10 relative overflow-hidden group animate-pulse hover:animate-none shadow-2xl" onclick="window.open('https://wa.me/923001234567?text=I want to order SPARTANS fragrance', '_blank')">
+                        <div class="absolute inset-0 bg-gradient-to-r from-bronze-glow via-bronze to-bronze-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <span class="relative z-10 font-bold tracking-widest text-white drop-shadow-lg">CLAIM YOUR BOTTLE NOW</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    </button>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-bronze font-cinzel text-xl lg:text-2xl font-bold mb-2">✓</div>
+                        <div class="text-sm lg:text-base font-inter text-muted-foreground">30-Day Money Back Guarantee</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-bronze font-cinzel text-xl lg:text-2xl font-bold mb-2">✓</div>
+                        <div class="text-sm lg:text-base font-inter text-muted-foreground">Worldwide Premium Shipping</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-bronze font-cinzel text-xl lg:text-2xl font-bold mb-2">✓</div>
+                        <div class="text-sm lg:text-base font-inter text-muted-foreground">Certificate of Authenticity</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 lg:mt-12 p-6 bg-background/10 border border-bronze/20 rounded-lg max-w-lg mx-auto">
+                    <p class="font-cinzel text-lg text-bronze mb-2">Spartan's Oath</p>
+                    <p class="text-sm text-muted-foreground font-inter italic">
+                        "This fragrance will transform how the world sees you, or your conquest is free."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 lg:py-16 bg-gradient-warrior border-t border-bronze/20">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="font-cinzel text-2xl lg:text-3xl font-bold text-bronze mb-4">SPARTANS</h3>
+                <p class="text-muted-foreground font-inter text-sm lg:text-base mb-6">
+                    Legendary Fragrance for Modern Warriors
+                </p>
+                <div class="text-muted-foreground text-xs lg:text-sm font-inter">
+                    © 2024 SPARTANS. All rights reserved. | Forged with honor and excellence.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
